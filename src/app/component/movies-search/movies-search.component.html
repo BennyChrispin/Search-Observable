@@ -1,0 +1,29 @@
+<div>
+  <div class="flex items-center mb-4">
+    <input
+      type="text"
+      placeholder="Search for movies..."
+      [formControl]="searchControl"
+      class="flex-grow p-2 border border-gray-300 rounded-l-md focus:outline-none"
+    />
+    <button
+      type="button"
+      class="p-2 bg-blue-500 text-white rounded-r-md hover:bg-blue-600"
+      (click)="triggerSearch()"
+    >
+      Search
+    </button>
+  </div>
+
+  <div *ngIf="errorMsg" class="error-message text-red-600 mb-2">
+    {{ errorMsg }}
+  </div>
+
+  <ng-container *ngIf="filteredMovies$ | async as movies; else loading">
+    <app-movies-list [movies]="movies"></app-movies-list>
+  </ng-container>
+
+  <ng-template #loading>
+    <p class="text-gray-500">Loading movies...</p>
+  </ng-template>
+</div>
