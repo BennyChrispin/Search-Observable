@@ -1,4 +1,4 @@
-<div>
+<div class="max-w-screen-xl mx-auto mt-6">
   <div class="flex items-center mb-4">
     <input
       type="text"
@@ -8,14 +8,14 @@
     />
     <button
       type="button"
-      class="p-2 bg-blue-500 text-white rounded-r-md hover:bg-blue-600"
+      class="p-2 bg-green-500 text-white font-semibold rounded-r-md hover:bg-green-700 duration-300 transition-all ease-in-out"
       (click)="triggerSearch()"
     >
       Search
     </button>
   </div>
 
-  <div *ngIf="errorMsg" class="error-message text-red-600 mb-2">
+  <div *ngIf="errorMsg" class="error-message text-red-500 mb-4">
     {{ errorMsg }}
   </div>
 
