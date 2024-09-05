@@ -1,0 +1,24 @@
+<div class="p-4 max-w-md mx-auto">
+  <button
+    (click)="fetchData()"
+    class="px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-600 transition duration-300"
+  >
+    Fetch Data
+  </button>
+
+  <div *ngIf="loading" class="mt-4 text-blue-500 font-medium">Loading...</div>
+
+  <div *ngIf="status" class="mt-4 text-lg font-bold">
+    <span
+      [ngClass]="{
+        'text-green-600': status === 'Success',
+        'text-red-600': status === 'Error'
+      }"
+      >{{ status }}</span
+    >
+  </div>
+
+  <div *ngIf="result" class="mt-4 p-2 border rounded-lg bg-gray-100">
+    {{ result }}
+  </div>
+</div>
